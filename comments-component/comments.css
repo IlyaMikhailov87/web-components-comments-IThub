@@ -1,0 +1,32 @@
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    border-radius: 5px;
+    border-color: forestgreen;
+    height: 28px;
+    margin: 5px 10px 5px 0;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+.reply {
+    display: none;
+}
+
+form textarea {
+    width: 400px;
+    height: 70px;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+:disabled {
+    opacity: 0.5;
+}
+
+button[onclick="like(event)"] {
+    display: none;
+}

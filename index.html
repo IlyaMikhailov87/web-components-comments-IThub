@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Комментарии</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <div class="theme-buttons">
+        <button onclick="changeTheme('white')">Светлая тема</button>
+        <button onclick="changeTheme('black')">Темная тема</button>
+    </div>
+
+    <div id="news">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat. Duisaute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit
+            anim id est laborum.
+        </p>
+        <div class="buttons">
+            <button id="addcomment">Добавить комментарий</button>
+            <button onclick="like(event)">👍</button>
+        </div>
+
+        <!-- контейнер для блока комментариев к новости -->
+        <div id="comments"></div>
+    </div>
+
+    <!-- шаблон для комментариев. (Используйте HTML Templates для отображения структуры каждого комментария)-->
+    <template id="comment-template">
+
+        <!-- в template.css на примере кнопок видно, что стили изолированы -->
+        <link rel="stylesheet" href="comments-component/comments.css" />
+
+        <ul class="comment">
+            <li class="replies">
+                <div class="content">
+                    <p>Автор:
+                        <!-- слот для добавления имени и фамилии пользователя -->
+                        <slot name="author"></slot>
+                    </p>
+                    <p>Сообщение:
+                        <span id="message"></span>
+                    </p>
+                    <div>
+                        <form>
+                            <textarea placeholder="Ваш ответ..."></textarea>
+                        </form>
+                    </div>
+                    <div class="buttons">
+                        <button class="sendreply" disabled>Отправить ответ</button>
+                        <button class="reply">Ответить</button>
+                        <button onclick="like(event)">👍</button>
+                        <button class="delete">Удалить</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </template>
+
+    <script src="main.js"></script>
+    <script src="comments-component/comments.js"></script>
+</body>
+
+</html>

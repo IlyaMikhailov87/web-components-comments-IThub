@@ -1,0 +1,48 @@
+:root {
+    --bg-color: white;
+    --color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    border-color: rgb(0, 62, 187);
+    height: 33px;
+    background-color: var(--bg-color);
+    color: var(--color);
+}
+
+#news {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+button[onclick="changeTheme('white')"] {
+    background-color: white;
+    color: black;
+}
+
+button[onclick="changeTheme('black')"] {
+    background-color: black;
+    color: white;
+}
+
+.theme-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+:disabled {
+    opacity: 0.5;
+}
